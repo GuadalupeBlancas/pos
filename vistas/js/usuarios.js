@@ -110,7 +110,7 @@ $(".tablas").on("click", ".btnActivar", function(){
       processData: false,
       success: function(respuesta){
 
-	      	if(window.matchMedia("(max-width:767px)").matches){
+      		if(window.matchMedia("(max-width:767px)").matches){
 
 	      		 swal({
 			      title: "El usuario ha sido actualizado",
@@ -127,10 +127,10 @@ $(".tablas").on("click", ".btnActivar", function(){
 				});
 
 	      	}
-      
-		}
 
-	})
+      }
+
+  	})
 
   	if(estadoUsuario == 0){
 

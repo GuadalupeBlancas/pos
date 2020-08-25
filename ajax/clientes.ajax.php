@@ -5,7 +5,9 @@ require_once "../modelos/clientes.modelo.php";
 
 class AjaxClientes{
 
-	/* Editar cliente*/	
+	/*=============================================
+	EDITAR CLIENTE
+	=============================================*/	
 
 	public $idCliente;
 
@@ -17,10 +19,15 @@ class AjaxClientes{
 		$respuesta = ControladorClientes::ctrMostrarClientes($item, $valor);
 
 		echo json_encode($respuesta);
+
+
 	}
+
 }
 
-/* Editar cliente objeto*/	
+/*=============================================
+EDITAR CLIENTE
+=============================================*/	
 
 if(isset($_POST["idCliente"])){
 

@@ -1,8 +1,12 @@
-/* SideBar Menu*/
+/*=============================================
+SideBar Menu
+=============================================*/
 
 $('.sidebar-menu').tree()
 
-/* Data Table*/
+/*=============================================
+Data Table
+=============================================*/
 
 $(".tablas").DataTable({
 
@@ -35,14 +39,18 @@ $(".tablas").DataTable({
 
 });
 
-/* iCheck for checkbox and radio inputs */
+/*=============================================
+ //iCheck for checkbox and radio inputs
+=============================================*/
 
 $('input[type="checkbox"].minimal, input[type="radio"].minimal').iCheck({
   checkboxClass: 'icheckbox_minimal-blue',
   radioClass   : 'iradio_minimal-blue'
 })
 
-/* Input Mask */
+/*=============================================
+ //input Mask
+=============================================*/
 
 //Datemask dd/mm/yyyy
 $('#datemask').inputmask('dd/mm/yyyy', { 'placeholder': 'dd/mm/yyyy' })

@@ -2,7 +2,9 @@
 
 class ControladorClientes{
 
-    /* Crear cliente*/
+	/*=============================================
+	CREAR CLIENTES
+	=============================================*/
 
 	static public function ctrCrearCliente(){
 
@@ -64,15 +66,20 @@ class ControladorClientes{
 						})
 
 			  	</script>';
+
+
+
 			}
 
 		}
 
 	}
 
-	/* Mostrar clientes*/
+	/*=============================================
+	MOSTRAR CLIENTES
+	=============================================*/
 
-		static public function ctrMostrarClientes($item, $valor){
+	static public function ctrMostrarClientes($item, $valor){
 
 		$tabla = "clientes";
 
@@ -82,9 +89,11 @@ class ControladorClientes{
 
 	}
 
-	/* Editar cliente*/
+	/*=============================================
+	EDITAR CLIENTE
+	=============================================*/
 
-		static public function ctrEditarCliente(){
+	static public function ctrEditarCliente(){
 
 		if(isset($_POST["editarCliente"])){
 
@@ -154,9 +163,11 @@ class ControladorClientes{
 
 	}
 
-	/* Eliminar cliente*/
+	/*=============================================
+	ELIMINAR CLIENTE
+	=============================================*/
 
-		static public function ctrEliminarCliente(){
+	static public function ctrEliminarCliente(){
 
 		if(isset($_GET["idCliente"])){
 

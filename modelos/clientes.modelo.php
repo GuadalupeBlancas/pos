@@ -4,10 +4,11 @@ require_once "conexion.php";
 
 class ModeloClientes{
 
+	/*=============================================
+	CREAR CLIENTE
+	=============================================*/
 
-    /* Crear cliente */
-
-    static public function mdlIngresarCliente($tabla, $datos){
+	static public function mdlIngresarCliente($tabla, $datos){
 
 		$stmt = Conexion::conectar()->prepare("INSERT INTO $tabla(nombre, documento, email, telefono, direccion, fecha_nacimiento) VALUES (:nombre, :documento, :email, :telefono, :direccion, :fecha_nacimiento)");
 
@@ -18,7 +19,7 @@ class ModeloClientes{
 		$stmt->bindParam(":direccion", $datos["direccion"], PDO::PARAM_STR);
 		$stmt->bindParam(":fecha_nacimiento", $datos["fecha_nacimiento"], PDO::PARAM_STR);
 
-		if($stmt-> execute()){
+		if($stmt->execute()){
 
 			return "ok";
 
@@ -31,11 +32,13 @@ class ModeloClientes{
 		$stmt->close();
 		$stmt = null;
 
-    }
-    
-	/* Mostrar clientes*/
-	
-		static public function mdlMostrarClientes($tabla, $item, $valor){
+	}
+
+	/*=============================================
+	MOSTRAR CLIENTES
+	=============================================*/
+
+	static public function mdlMostrarClientes($tabla, $item, $valor){
 
 		if($item != null){
 
@@ -63,9 +66,11 @@ class ModeloClientes{
 
 	}
 
-	/* Editar cliente*/
+	/*=============================================
+	EDITAR CLIENTE
+	=============================================*/
 
-		static public function mdlEditarCliente($tabla, $datos){
+	static public function mdlEditarCliente($tabla, $datos){
 
 		$stmt = Conexion::conectar()->prepare("UPDATE $tabla SET nombre = :nombre, documento = :documento, email = :email, telefono = :telefono, direccion = :direccion, fecha_nacimiento = :fecha_nacimiento WHERE id = :id");
 
@@ -92,7 +97,9 @@ class ModeloClientes{
 
 	}
 
-	/* Eliminar cliente*/
+	/*=============================================
+	ELIMINAR CLIENTE
+	=============================================*/
 
 	static public function mdlEliminarCliente($tabla, $datos){
 
@@ -116,7 +123,31 @@ class ModeloClientes{
 
 	}
 
+	/*=============================================
+	ACTUALIZAR CLIENTE
+	=============================================*/
 
+	static public function mdlActualizarCliente($tabla, $item1, $valor1, $valor){
 
+		$stmt = Conexion::conectar()->prepare("UPDATE $tabla SET $item1 = :$item1 WHERE id = :id");
+
+		$stmt -> bindParam(":".$item1, $valor1, PDO::PARAM_STR);
+		$stmt -> bindParam(":id", $valor, PDO::PARAM_STR);
+
+		if($stmt -> execute()){
+
+			return "ok";
+		
+		}else{
+
+			return "error";	
+
+		}
+
+		$stmt -> close();
+
+		$stmt = null;
+
+	}
 
 }

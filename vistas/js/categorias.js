@@ -1,94 +1,57 @@
-/* Editar categoria*/
+/*=============================================
+EDITAR CATEGORIA
+=============================================*/
+$(".tablas").on("click", ".btnEditarCategoria", function(){
 
-$(".tablas").on("click", ".btnEditarCategoria", function () {
+	var idCategoria = $(this).attr("idCategoria");
 
-    var idCategoria = $(this).attr("idCategoria");
+	var datos = new FormData();
+	datos.append("idCategoria", idCategoria);
 
-    var datos = new FormData();
-    datos.append("idCategoria", idCategoria); //variable POST, var idCategoria
+	$.ajax({
+		url: "ajax/categorias.ajax.php",
+		method: "POST",
+      	data: datos,
+      	cache: false,
+     	contentType: false,
+     	processData: false,
+     	dataType:"json",
+     	success: function(respuesta){
 
-    $.ajax({
-        url: "ajax/categorias.ajax.php",
-        method: "POST",
-        data: datos,
-        cache: false,
-        contentType: false,
-        processData: false,
-        dataType: "json",
-        success: function (respuesta) {
+     		$("#editarCategoria").val(respuesta["categoria"]);
+     		$("#idCategoria").val(respuesta["id"]);
 
-            //console.log("respuesta", respuesta);
+     	}
 
-            $("#editarCategoria").val(respuesta["categoria"]);
-            $("#idCategoria").val(respuesta["id"]);
+	})
 
-        }
-
-    })
-
-
-})
-
-/*Eliminar categoria*/
-$(".tablas").on("click", ".btnEliminarCategoria", function () {
-
-    var idCategoria = $(this).attr("idCategoria");
-
-    swal({
-        title: '¿Está seguro de borrar la categoría?',
-        text: "¡Puede cancelar la acción!",
-        type: 'warning',
-        showCancelButton: true,
-        confirmButtonColor: '#3085d6',
-        cancelButtonColor: '#d33',
-        cancelButtonText: 'Cancelar',
-        confirmButtonText: 'Borrar categoría!'
-        
-    }).then(function (result) {
-
-        if (result.value) {
-
-            window.location = "index.php?ruta=categorias&idCategoria=" + idCategoria;
-
-        }
-
-    })
 
 })
 
-    /* Verificar si existe ya la categoría*/
+/*=============================================
+ELIMINAR CATEGORIA
+=============================================*/
+$(".tablas").on("click", ".btnEliminarCategoria", function(){
 
-$("#nuevaCategoria").change(function () {
+	 var idCategoria = $(this).attr("idCategoria");
 
-    $(".alert").remove();
+	 swal({
+	 	title: '¿Está seguro de borrar la categoría?',
+	 	text: "¡Si no lo está puede cancelar la acción!",
+	 	type: 'warning',
+	 	showCancelButton: true,
+	 	confirmButtonColor: '#3085d6',
+	 	cancelButtonColor: '#d33',
+	 	cancelButtonText: 'Cancelar',
+	 	confirmButtonText: 'Si, borrar categoría!'
+	 }).then(function(result){
 
-    var categoria = $(this).val();
+	 	if(result.value){
 
-    var datos = new FormData();
-    datos.append("validarCategoria", categoria);
+	 		window.location = "index.php?ruta=categorias&idCategoria="+idCategoria;
 
-    $.ajax({
-        url: "ajax/categorias.ajax.php",
-        method: "POST",
-        data: datos,
-        cache: false,
-        contentType: false,
-        processData: false,
-        dataType: "json",
-        success: function (respuesta) {
+	 	}
 
-            //console.log("respuesta", respuesta);
+	 })
 
-            if (respuesta) {
-
-                $("#nuevaCategoria").parent().after('<div class="alert alert-warning">Categoría ya existente!</div>');
-
-                $("#nuevaCategoria").val("");
-
-            }
-
-        }
-
-    })
 })
-

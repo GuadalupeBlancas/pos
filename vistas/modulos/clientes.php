@@ -46,9 +46,9 @@
            <th>Email</th>
            <th>Teléfono</th>
            <th>Dirección</th>
-           <th>Fecha nacimiento</th>
+           <th>Fecha nacimiento</th> 
            <th>Total compras</th>
-           <th>última compra</th>
+           <th>Última compra</th>
            <th>Ingreso al sistema</th>
            <th>Acciones</th>
 
@@ -67,6 +67,7 @@
 
           foreach ($clientes as $key => $value) {
             
+
             echo '<tr>
 
                     <td>'.($key+1).'</td>
@@ -85,7 +86,7 @@
 
                     <td>'.$value["compras"].'</td>
 
-                    <td>0000-00-00 00:00:00</td>
+                    <td>'.$value["ultima_compra"].'</td>
 
                     <td>'.$value["fecha"].'</td>
 
@@ -106,7 +107,7 @@
             }
 
         ?>
-
+   
         </tbody>
 
        </table>
@@ -119,7 +120,9 @@
 
 </div>
 
-<!-- Modal Agregar cliente-->
+<!--=====================================
+MODAL AGREGAR CLIENTE
+======================================-->
 
 <div id="modalAgregarCliente" class="modal fade" role="dialog">
   
@@ -129,7 +132,9 @@
 
       <form role="form" method="post">
 
-        <!-- cabecera del modal-->
+        <!--=====================================
+        CABEZA DEL MODAL
+        ======================================-->
 
         <div class="modal-header" style="background:#3c8dbc; color:white">
 
@@ -139,13 +144,15 @@
 
         </div>
 
-        <!-- Cuerpo del modal-->
+        <!--=====================================
+        CUERPO DEL MODAL
+        ======================================-->
 
         <div class="modal-body">
 
           <div class="box-body">
 
-            <!-- Entrada nombre -->
+            <!-- ENTRADA PARA EL NOMBRE -->
             
             <div class="form-group">
               
@@ -159,7 +166,7 @@
 
             </div>
 
-            <!-- Entrada documento ID -->
+            <!-- ENTRADA PARA EL DOCUMENTO ID -->
             
             <div class="form-group">
               
@@ -173,7 +180,7 @@
 
             </div>
 
-            <!-- Entrada email -->
+            <!-- ENTRADA PARA EL EMAIL -->
             
             <div class="form-group">
               
@@ -187,7 +194,7 @@
 
             </div>
 
-            <!-- Entrada telefono -->
+            <!-- ENTRADA PARA EL TELÉFONO -->
             
             <div class="form-group">
               
@@ -195,13 +202,13 @@
               
                 <span class="input-group-addon"><i class="fa fa-phone"></i></span> 
 
-                <input type="text" class="form-control input-lg" name="nuevoTelefono" placeholder="Ingresar teléfono" data-inputmask="'mask': '(999) 999-9999'" data-mask required>
+                <input type="text" class="form-control input-lg" name="nuevoTelefono" placeholder="Ingresar teléfono" data-inputmask="'mask':'(999) 999-9999'" data-mask required>
 
               </div>
 
             </div>
 
-            <!-- Entrada direccion -->
+            <!-- ENTRADA PARA LA DIRECCIÓN -->
             
             <div class="form-group">
               
@@ -215,7 +222,7 @@
 
             </div>
 
-            <!-- Entrada fecha nacimiento -->
+             <!-- ENTRADA PARA LA FECHA DE NACIMIENTO -->
             
             <div class="form-group">
               
@@ -228,12 +235,14 @@
               </div>
 
             </div>
-
+  
           </div>
 
         </div>
 
-        <!-- Footer del mdodal -->
+        <!--=====================================
+        PIE DEL MODAL
+        ======================================-->
 
         <div class="modal-footer">
 
@@ -246,10 +255,10 @@
       </form>
 
       <?php
-      
+
         $crearCliente = new ControladorClientes();
         $crearCliente -> ctrCrearCliente();
-        
+
       ?>
 
     </div>
@@ -258,8 +267,9 @@
 
 </div>
 
-
-<!-- Modal editar cliente-->
+<!--=====================================
+MODAL EDITAR CLIENTE
+======================================-->
 
 <div id="modalEditarCliente" class="modal fade" role="dialog">
   
@@ -269,7 +279,9 @@
 
       <form role="form" method="post">
 
-        <!-- Cabecera del modal -->
+        <!--=====================================
+        CABEZA DEL MODAL
+        ======================================-->
 
         <div class="modal-header" style="background:#3c8dbc; color:white">
 
@@ -279,13 +291,15 @@
 
         </div>
 
-        <!-- Cuerpo del modal-->
+        <!--=====================================
+        CUERPO DEL MODAL
+        ======================================-->
 
         <div class="modal-body">
 
           <div class="box-body">
 
-            <!-- Entrada para el nombre -->
+            <!-- ENTRADA PARA EL NOMBRE -->
             
             <div class="form-group">
               
@@ -294,14 +308,12 @@
                 <span class="input-group-addon"><i class="fa fa-user"></i></span> 
 
                 <input type="text" class="form-control input-lg" name="editarCliente" id="editarCliente" required>
-
                 <input type="hidden" id="idCliente" name="idCliente">
-
               </div>
 
             </div>
 
-            <!-- Entrada documento ID -->
+            <!-- ENTRADA PARA EL DOCUMENTO ID -->
             
             <div class="form-group">
               
@@ -315,7 +327,7 @@
 
             </div>
 
-            <!-- Entrada para el email -->
+            <!-- ENTRADA PARA EL EMAIL -->
             
             <div class="form-group">
               
@@ -329,7 +341,7 @@
 
             </div>
 
-            <!-- Entrada para el teléfono -->
+            <!-- ENTRADA PARA EL TELÉFONO -->
             
             <div class="form-group">
               
@@ -343,7 +355,7 @@
 
             </div>
 
-            <!-- Entrada para la direccion -->
+            <!-- ENTRADA PARA LA DIRECCIÓN -->
             
             <div class="form-group">
               
@@ -357,7 +369,7 @@
 
             </div>
 
-             <!-- Entrada fecha de nacimiento -->
+             <!-- ENTRADA PARA LA FECHA DE NACIMIENTO -->
             
             <div class="form-group">
               
@@ -375,13 +387,15 @@
 
         </div>
 
-        <!-- Footer del modal -->
+        <!--=====================================
+        PIE DEL MODAL
+        ======================================-->
 
         <div class="modal-footer">
 
           <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Salir</button>
 
-          <button type="submit" class="btn btn-primary">Actualizar cliente</button>
+          <button type="submit" class="btn btn-primary">Guardar cambios</button>
 
         </div>
 
@@ -393,6 +407,8 @@
         $editarCliente -> ctrEditarCliente();
 
       ?>
+
+    
 
     </div>
 
@@ -406,4 +422,5 @@
   $eliminarCliente -> ctrEliminarCliente();
 
 ?>
+
 

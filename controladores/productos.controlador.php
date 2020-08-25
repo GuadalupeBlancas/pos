@@ -2,7 +2,9 @@
 
 class ControladorProductos{
 
-	/* Seleccionar / mostrar productos*/
+	/*=============================================
+	MOSTRAR PRODUCTOS
+	=============================================*/
 
 	static public function ctrMostrarProductos($item, $valor){
 
@@ -14,7 +16,9 @@ class ControladorProductos{
 
 	}
 
-	/* Crear producto*/
+	/*=============================================
+	CREAR PRODUCTO
+	=============================================*/
 
 	static public function ctrCrearProducto(){
 
@@ -25,7 +29,9 @@ class ControladorProductos{
 			   preg_match('/^[0-9.]+$/', $_POST["nuevoPrecioCompra"]) &&
 			   preg_match('/^[0-9.]+$/', $_POST["nuevoPrecioVenta"])){
 
-		   		/* Validar imagen*/
+		   		/*=============================================
+				VALIDAR IMAGEN
+				=============================================*/
 
 			   	$ruta = "vistas/img/productos/default/anonymous.png";
 
@@ -36,17 +42,23 @@ class ControladorProductos{
 					$nuevoAncho = 500;
 					$nuevoAlto = 500;
 
-					/* Crear directorio para la iamgen */
+					/*=============================================
+					CREAMOS EL DIRECTORIO DONDE VAMOS A GUARDAR LA FOTO DEL USUARIO
+					=============================================*/
 
 					$directorio = "vistas/img/productos/".$_POST["nuevoCodigo"];
 
 					mkdir($directorio, 0755);
 
-					/* De acuerdo al tipo de imagen aplicamos funciones default PHP */
+					/*=============================================
+					DE ACUERDO AL TIPO DE IMAGEN APLICAMOS LAS FUNCIONES POR DEFECTO DE PHP
+					=============================================*/
 
 					if($_FILES["nuevaImagen"]["type"] == "image/jpeg"){
 
-						/* Guardar la imagen en el dir*/
+						/*=============================================
+						GUARDAMOS LA IMAGEN EN EL DIRECTORIO
+						=============================================*/
 
 						$aleatorio = mt_rand(100,999);
 
@@ -64,7 +76,9 @@ class ControladorProductos{
 
 					if($_FILES["nuevaImagen"]["type"] == "image/png"){
 
-						/* Guardar la imagen en el dir*/
+						/*=============================================
+						GUARDAMOS LA IMAGEN EN EL DIRECTORIO
+						=============================================*/
 
 						$aleatorio = mt_rand(100,999);
 
@@ -103,7 +117,7 @@ class ControladorProductos{
 							  title: "El producto ha sido guardado correctamente",
 							  showConfirmButton: true,
 							  confirmButtonText: "Cerrar"
-							  }).then(function(result){
+							  }).then((result) => {
 										if (result.value) {
 
 										window.location = "productos";
@@ -122,10 +136,10 @@ class ControladorProductos{
 
 					swal({
 						  type: "error",
-						  title: "¡El producto no puede tener campos vacíos o llevar caracteres especiales!",
+						  title: "¡El producto no puede ir con los campos vacíos o llevar caracteres especiales!",
 						  showConfirmButton: true,
 						  confirmButtonText: "Cerrar"
-						  }).then(function(result){
+						  }).then((result) => {
 							if (result.value) {
 
 							window.location = "productos";
@@ -139,7 +153,9 @@ class ControladorProductos{
 
 	}
 
-	/* Editar producto */
+	/*=============================================
+	EDITAR PRODUCTO
+	=============================================*/
 
 	static public function ctrEditarProducto(){
 
@@ -150,7 +166,9 @@ class ControladorProductos{
 			   preg_match('/^[0-9.]+$/', $_POST["editarPrecioCompra"]) &&
 			   preg_match('/^[0-9.]+$/', $_POST["editarPrecioVenta"])){
 
-		   		/* Validar la imagen */
+		   		/*=============================================
+				VALIDAR IMAGEN
+				=============================================*/
 
 			   	$ruta = $_POST["imagenActual"];
 
@@ -161,11 +179,15 @@ class ControladorProductos{
 					$nuevoAncho = 500;
 					$nuevoAlto = 500;
 
-					/* Crear dir para guardar la imagen*/
+					/*=============================================
+					CREAMOS EL DIRECTORIO DONDE VAMOS A GUARDAR LA FOTO DEL USUARIO
+					=============================================*/
 
 					$directorio = "vistas/img/productos/".$_POST["editarCodigo"];
 
-					/* Verificar si existe la imagen en la BD*/
+					/*=============================================
+					PRIMERO PREGUNTAMOS SI EXISTE OTRA IMAGEN EN LA BD
+					=============================================*/
 
 					if(!empty($_POST["imagenActual"]) && $_POST["imagenActual"] != "vistas/img/productos/default/anonymous.png"){
 
@@ -177,11 +199,15 @@ class ControladorProductos{
 					
 					}
 					
-					/* De acuerdo al tipo de imagen aplicamos funciones default PHP */
+					/*=============================================
+					DE ACUERDO AL TIPO DE IMAGEN APLICAMOS LAS FUNCIONES POR DEFECTO DE PHP
+					=============================================*/
 
 					if($_FILES["editarImagen"]["type"] == "image/jpeg"){
 
-						/* Guardar la imagen en el dir */
+						/*=============================================
+						GUARDAMOS LA IMAGEN EN EL DIRECTORIO
+						=============================================*/
 
 						$aleatorio = mt_rand(100,999);
 
@@ -199,7 +225,9 @@ class ControladorProductos{
 
 					if($_FILES["editarImagen"]["type"] == "image/png"){
 
-						/* Guardar la imagen en el dir */
+						/*=============================================
+						GUARDAMOS LA IMAGEN EN EL DIRECTORIO
+						=============================================*/
 
 						$aleatorio = mt_rand(100,999);
 
@@ -235,10 +263,10 @@ class ControladorProductos{
 
 						swal({
 							  type: "success",
-							  title: "El producto ha sido actualizado correctamente",
+							  title: "El producto ha sido editado correctamente",
 							  showConfirmButton: true,
 							  confirmButtonText: "Cerrar"
-							  }).then(function(result){
+							  }).then((result) => {
 										if (result.value) {
 
 										window.location = "productos";
@@ -257,10 +285,10 @@ class ControladorProductos{
 
 					swal({
 						  type: "error",
-						  title: "¡El producto no puede tener campos vacíos o llevar caracteres especiales!",
+						  title: "¡El producto no puede ir con los campos vacíos o llevar caracteres especiales!",
 						  showConfirmButton: true,
 						  confirmButtonText: "Cerrar"
-						  }).then(function(result){
+						  }).then((result) => {
 							if (result.value) {
 
 							window.location = "productos";
@@ -274,8 +302,9 @@ class ControladorProductos{
 
 	}
 
-	/* Eliminar producto*/
-	
+	/*=============================================
+	BORRAR PRODUCTO
+	=============================================*/
 	static public function ctrEliminarProducto(){
 
 		if(isset($_GET["idProducto"])){
@@ -301,7 +330,7 @@ class ControladorProductos{
 					  title: "El producto ha sido borrado correctamente",
 					  showConfirmButton: true,
 					  confirmButtonText: "Cerrar"
-					  }).then(function(result){
+					  }).then((result) => {
 								if (result.value) {
 
 								window.location = "productos";

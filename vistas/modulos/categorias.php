@@ -1,14 +1,19 @@
 <div class="content-wrapper">
 
   <section class="content-header">
-
+    
     <h1>
+      
       Administrar categorías
+    
     </h1>
 
     <ol class="breadcrumb">
+      
       <li><a href="inicio"><i class="fa fa-dashboard"></i> Inicio</a></li>
+      
       <li class="active">Administrar categorías</li>
+    
     </ol>
 
   </section>
@@ -18,64 +23,68 @@
     <div class="box">
 
       <div class="box-header with-border">
-
+  
         <button class="btn btn-primary" data-toggle="modal" data-target="#modalAgregarCategoria">
-          Agregar Categoría
+          
+          Agregar categoría
+
         </button>
 
       </div>
 
       <div class="box-body">
+        
+       <table class="table table-bordered table-striped dt-responsive tablas" width="100%">
+         
+        <thead>
+         
+         <tr>
+           
+           <th style="width:10px">#</th>
+           <th>Categoria</th>
+           <th>Acciones</th>
 
-        <table class="table table-bordered table-striped dt-responsive tablas" width="100%">
+         </tr> 
 
-          <thead>
+        </thead>
 
-            <tr>
-              <th style="width:10px">No.</th>
-              <th>Categoría</th>
-              <th>Acciones</th>
-            </tr>
+        <tbody>
 
-          </thead>
+        <?php
 
-          <tbody>
+          $item = null;
+          $valor = null;
 
-            <?php
+          $categorias = ControladorCategorias::ctrMostrarCategorias($item, $valor);
 
-            $item = null;
-            $valor = null;
+          foreach ($categorias as $key => $value) {
+           
+            echo ' <tr>
 
-            $categorias = ControladorCategorias::ctrMostrarCategorias($item, $valor);
+                    <td>'.($key+1).'</td>
 
-            foreach ($categorias as $key => $value) {
+                    <td class="text-uppercase">'.$value["categoria"].'</td>
 
-              echo
-                '<tr>
+                    <td>
 
-                      <td>' . ($key + 1) . '</td>
-                      <td class="text-uppercase">' . $value["categoria"] . '</td>
+                      <div class="btn-group">
+                          
+                        <button class="btn btn-warning btnEditarCategoria" idCategoria="'.$value["id"].'" data-toggle="modal" data-target="#modalEditarCategoria"><i class="fa fa-pencil"></i></button>
 
-                      <td>
+                        <button class="btn btn-danger btnEliminarCategoria" idCategoria="'.$value["id"].'"><i class="fa fa-times"></i></button>
 
-                        <div class="btn-group">
+                      </div>  
 
-                          <button class="btn btn-warning btnEditarCategoria" idCategoria="' . $value["id"] . '" data-toggle="modal" data-target="#modalEditarCategoria"><i class="fa fa-pencil"></i></button>
-
-                          <button class="btn btn-danger btnEliminarCategoria" idCategoria="' . $value["id"] . '"><i class="fa fa-times"></i></button>
-
-                        </div>
-
-                      </td>
+                    </td>
 
                   </tr>';
-            }
+          }
 
-            ?>
+        ?>
 
-          </tbody>
+        </tbody>
 
-        </table>
+       </table>
 
       </div>
 
@@ -85,51 +94,59 @@
 
 </div>
 
-<!-- Modal Agregar categoría -->
+<!--=====================================
+MODAL AGREGAR CATEGORÍA
+======================================-->
 
 <div id="modalAgregarCategoria" class="modal fade" role="dialog">
-
+  
   <div class="modal-dialog">
 
     <div class="modal-content">
 
       <form role="form" method="post">
 
-        <!-- Cabeza del modal -->
+        <!--=====================================
+        CABEZA DEL MODAL
+        ======================================-->
 
-        <div class="modal-header" style="background: #3c8dbc; color:white">
+        <div class="modal-header" style="background:#3c8dbc; color:white">
 
           <button type="button" class="close" data-dismiss="modal">&times;</button>
 
-          <h4 class="modal-title">Agregar Categoría</h4>
+          <h4 class="modal-title">Agregar categoría</h4>
 
         </div>
 
-        <!-- Cuerpo del modal -->
+        <!--=====================================
+        CUERPO DEL MODAL
+        ======================================-->
 
         <div class="modal-body">
 
           <div class="box-body">
 
-            <!-- Entrada nombre categoría-->
-
+            <!-- ENTRADA PARA EL NOMBRE -->
+            
             <div class="form-group">
-
+              
               <div class="input-group">
+              
+                <span class="input-group-addon"><i class="fa fa-th"></i></span> 
 
-                <span class="input-group-addon"><i class="fa fa-th"></i></span>
-
-                <input type="text" class="form-control input-lg" id="nuevaCategoria" name="nuevaCategoria" placeholder="Ingresar categoría" required>
+                <input type="text" class="form-control input-lg" name="nuevaCategoria" placeholder="Ingresar categoría" required>
 
               </div>
 
             </div>
-
+  
           </div>
 
         </div>
 
-        <!-- Footer del modal -->
+        <!--=====================================
+        PIE DEL MODAL
+        ======================================-->
 
         <div class="modal-footer">
 
@@ -141,9 +158,8 @@
 
         <?php
 
-        $crearCategoria = new ControladorCategorias();
-
-        $crearCategoria->ctrCrearCategoria();
+          $crearCategoria = new ControladorCategorias();
+          $crearCategoria -> ctrCrearCategoria();
 
         ?>
 
@@ -155,69 +171,76 @@
 
 </div>
 
-<!-- Modal Editar categoría -->
+<!--=====================================
+MODAL EDITAR CATEGORÍA
+======================================-->
 
 <div id="modalEditarCategoria" class="modal fade" role="dialog">
-
+  
   <div class="modal-dialog">
 
     <div class="modal-content">
 
       <form role="form" method="post">
 
-        <!-- Cabeza del modal -->
+        <!--=====================================
+        CABEZA DEL MODAL
+        ======================================-->
 
-        <div class="modal-header" style="background: #3c8dbc; color:white">
+        <div class="modal-header" style="background:#3c8dbc; color:white">
 
           <button type="button" class="close" data-dismiss="modal">&times;</button>
 
-          <h4 class="modal-title">Editar Categoría</h4>
+          <h4 class="modal-title">Editar categoría</h4>
 
         </div>
 
-        <!-- Cuerpo del modal -->
+        <!--=====================================
+        CUERPO DEL MODAL
+        ======================================-->
 
         <div class="modal-body">
 
           <div class="box-body">
 
-            <!-- Entrada nombre categoría-->
-
+            <!-- ENTRADA PARA EL NOMBRE -->
+            
             <div class="form-group">
-
+              
               <div class="input-group">
-
-                <span class="input-group-addon"><i class="fa fa-th"></i></span>
+              
+                <span class="input-group-addon"><i class="fa fa-th"></i></span> 
 
                 <input type="text" class="form-control input-lg" name="editarCategoria" id="editarCategoria" required>
 
-                <input type="hidden" id="idCategoria" name="idCategoria" required>
+                 <input type="hidden"  name="idCategoria" id="idCategoria" required>
 
               </div>
 
             </div>
-
+  
           </div>
 
         </div>
 
-        <!-- Footer del modal -->
+        <!--=====================================
+        PIE DEL MODAL
+        ======================================-->
 
         <div class="modal-footer">
 
           <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Salir</button>
 
-          <button type="submit" class="btn btn-primary">Editar categoría</button>
+          <button type="submit" class="btn btn-primary">Guardar cambios</button>
 
         </div>
 
-        <?php
+      <?php
 
-        $editarCategoria = new ControladorCategorias();
+          $editarCategoria = new ControladorCategorias();
+          $editarCategoria -> ctrEditarCategoria();
 
-        $editarCategoria->ctrEditarCategoria();
-
-        ?>
+        ?> 
 
       </form>
 
@@ -230,7 +253,8 @@
 <?php
 
   $borrarCategoria = new ControladorCategorias();
-
-   $borrarCategoria->ctrBorrarCategoria();
+  $borrarCategoria -> ctrBorrarCategoria();
 
 ?>
+
+

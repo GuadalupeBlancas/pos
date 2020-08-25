@@ -1,4 +1,6 @@
-/* Cargar la tabla dinamica de productos*/
+/*=============================================
+CARGAR LA TABLA DINÁMICA DE PRODUCTOS
+=============================================*/
 
 // $.ajax({
 
@@ -45,8 +47,9 @@ $('.tablaProductos').DataTable( {
 
 } );
 
-/* Captura la categoria para asignar codigo*/
-
+/*=============================================
+CAPTURANDO LA CATEGORIA PARA ASIGNAR CÓDIGO
+=============================================*/
 $("#nuevaCategoria").change(function(){
 
 	var idCategoria = $(this).val();
@@ -83,8 +86,9 @@ $("#nuevaCategoria").change(function(){
 
 })
 
-/* Agregar precio de venta*/
-
+/*=============================================
+AGREGANDO PRECIO DE VENTA
+=============================================*/
 $("#nuevoPrecioCompra, #editarPrecioCompra").change(function(){
 
 	if($(".porcentaje").prop("checked")){
@@ -105,8 +109,9 @@ $("#nuevoPrecioCompra, #editarPrecioCompra").change(function(){
 
 })
 
-/* Cambio de porcentaje*/
-
+/*=============================================
+CAMBIO DE PORCENTAJE
+=============================================*/
 $(".nuevoPorcentaje").change(function(){
 
 	if($(".porcentaje").prop("checked")){
@@ -141,13 +146,17 @@ $(".porcentaje").on("ifChecked",function(){
 
 })
 
-/* Subir imagen del producto*/
+/*=============================================
+SUBIENDO LA FOTO DEL PRODUCTO
+=============================================*/
 
 $(".nuevaImagen").change(function(){
 
 	var imagen = this.files[0];
 	
-	/* Validar formato de imagen JPG o PNG*/
+	/*=============================================
+  	VALIDAMOS EL FORMATO DE LA IMAGEN SEA JPG O PNG
+  	=============================================*/
 
   	if(imagen["type"] != "image/jpeg" && imagen["type"] != "image/png"){
 
@@ -187,7 +196,9 @@ $(".nuevaImagen").change(function(){
   	}
 })
 
-/* Editar producto*/
+/*=============================================
+EDITAR PRODUCTO
+=============================================*/
 
 $(".tablaProductos tbody").on("click", "button.btnEditarProducto", function(){
 
@@ -252,7 +263,9 @@ $(".tablaProductos tbody").on("click", "button.btnEditarProducto", function(){
 
 })
 
-/* Eliminar producto*/
+/*=============================================
+ELIMINAR PRODUCTO
+=============================================*/
 
 $(".tablaProductos tbody").on("click", "button.btnEliminarProducto", function(){
 
@@ -263,7 +276,7 @@ $(".tablaProductos tbody").on("click", "button.btnEliminarProducto", function(){
 	swal({
 
 		title: '¿Está seguro de borrar el producto?',
-		text: "¡Puede cancelar la accíón!",
+		text: "¡Si no lo está puede cancelar la accíón!",
 		type: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',

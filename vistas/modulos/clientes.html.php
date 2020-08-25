@@ -46,9 +46,9 @@
            <th>Email</th>
            <th>Teléfono</th>
            <th>Dirección</th>
-           <th>Fecha nacimiento</th>
+           <th>Fecha nacimiento</th> 
            <th>Total compras</th>
-           <th>última compra</th>
+           <th>Última compra</th>
            <th>Ingreso al sistema</th>
            <th>Acciones</th>
 
@@ -61,15 +61,24 @@
           <tr>
 
             <td>1</td>
-            <td>Juan Perez</td>
+
+            <td>Juan Villegas</td>
+
             <td>8161123</td>
-            <td>juan@gmail.com</td>
-            <td>7224115895</td>
-            <td>México</td>
-            <td>1987-15-10</td>
-            <td>20</td>
-            <td>2020-17-08</td>
-            <td>2020-12-08 15:05:40</td>
+
+            <td>juan@hotmail.com</td>
+
+            <td>555 57 67</td>
+
+            <td>calle 27 # 40 - 36</td>
+
+            <td>1982-15-11</td>
+
+            <td>2017-12-11 12:05:32</td>
+
+            <td>35</td>
+
+            <td>2017-12-11 12:05:32</td>
 
             <td>
 
@@ -85,33 +94,7 @@
 
           </tr>
 
-          <tr>
-
-            <td>1</td>
-            <td>Juan Perez</td>
-            <td>8161123</td>
-            <td>juan@gmail.com</td>
-            <td>7224115895</td>
-            <td>México</td>
-            <td>1987-15-10</td>
-            <td>20</td>
-            <td>2020-17-08</td>
-            <td>2020-12-08 15:05:40</td>
-
-            <td>
-
-              <div class="btn-group">
-                  
-                <button class="btn btn-warning"><i class="fa fa-pencil"></i></button>
-
-                <button class="btn btn-danger"><i class="fa fa-times"></i></button>
-
-              </div>  
-
-            </td>
-
-          </tr>
-
+          
         </tbody>
 
        </table>
@@ -124,7 +107,9 @@
 
 </div>
 
-<!-- Modal Agregar cliente-->
+<!--=====================================
+MODAL AGREGAR CLIENTE
+======================================-->
 
 <div id="modalAgregarCliente" class="modal fade" role="dialog">
   
@@ -134,7 +119,9 @@
 
       <form role="form" method="post">
 
-        <!-- cabecera del modal-->
+        <!--=====================================
+        CABEZA DEL MODAL
+        ======================================-->
 
         <div class="modal-header" style="background:#3c8dbc; color:white">
 
@@ -144,13 +131,15 @@
 
         </div>
 
-        <!-- Cuerpo del modal-->
+        <!--=====================================
+        CUERPO DEL MODAL
+        ======================================-->
 
         <div class="modal-body">
 
           <div class="box-body">
 
-            <!-- Entrada nombre -->
+            <!-- ENTRADA PARA EL NOMBRE -->
             
             <div class="form-group">
               
@@ -164,7 +153,7 @@
 
             </div>
 
-            <!-- Entrada documento ID -->
+            <!-- ENTRADA PARA EL DOCUMENTO ID -->
             
             <div class="form-group">
               
@@ -178,7 +167,7 @@
 
             </div>
 
-            <!-- Entrada email -->
+            <!-- ENTRADA PARA EL EMAIL -->
             
             <div class="form-group">
               
@@ -192,7 +181,7 @@
 
             </div>
 
-            <!-- Entrada telefono -->
+            <!-- ENTRADA PARA EL TELÉFONO -->
             
             <div class="form-group">
               
@@ -200,13 +189,13 @@
               
                 <span class="input-group-addon"><i class="fa fa-phone"></i></span> 
 
-                <input type="text" class="form-control input-lg" name="nuevoTelefono" placeholder="Ingresar teléfono" data-inputmask="'mask': '(999) 999-9999'" data-mask required>
+                <input type="text" class="form-control input-lg" name="nuevoTelefono" placeholder="Ingresar teléfono" data-inputmask="'mask':'(999) 999-9999'" data-mask required>
 
               </div>
 
             </div>
 
-            <!-- Entrada direccion -->
+            <!-- ENTRADA PARA LA DIRECCIÓN -->
             
             <div class="form-group">
               
@@ -220,7 +209,7 @@
 
             </div>
 
-            <!-- Entrada fecha nacimiento -->
+             <!-- ENTRADA PARA LA FECHA DE NACIMIENTO -->
             
             <div class="form-group">
               
@@ -233,7 +222,7 @@
               </div>
 
             </div>
-
+  
           </div>
 
         </div>

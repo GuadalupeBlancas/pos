@@ -38,7 +38,7 @@
          
         <thead>
          
-          <tr>
+         <tr>
            
            <th style="width:10px">#</th>
            <th>Imagen</th>
@@ -55,53 +55,7 @@
 
         </thead>
 
-      <!--   <tbody>
-
-        <?php
-
-        $item = null;
-
-        $valor = null;
-
-        $productos = ControladorProductos::ctrMostrarProductos($item, $valor);
-
-        foreach ($productos as $key => $value) {
-          
-          echo '<tr>
-                  <td>'.($key+1).'</td>
-                  <td><img src="vistas/img/productos/default/anonymous.png" class="img-thumbnail" width="40px"></td>
-                  <td>'.$value["codigo"].'</td>
-                  <td>'.$value["descripcion"].'</td>';
-
-                  $item = "id";
-                  $valor = $value["id_categoria"];
-
-                  $categoria = ControladorCategorias::ctrMostrarCategorias($item, $valor);
-
-                 echo '<td>'.$categoria["categoria"].'</td>
-                  <td>'.$value["stock"].'</td>
-                  <td>'.$value["precio_compra"].'</td>
-                  <td>'.$value["precio_venta"].'</td>
-                  <td>'.$value["fecha"].'</td>
-                  <td>
-
-                    <div class="btn-group">
-                        
-                      <button class="btn btn-warning"><i class="fa fa-pencil"></i></button>
-
-                      <button class="btn btn-danger"><i class="fa fa-times"></i></button>
-
-                    </div>  
-
-                  </td>
-
-                </tr>';
-
-        }
-
-        ?>
-                 
-        </tbody> -->
+       
 
        </table>
 
@@ -230,7 +184,7 @@ MODAL AGREGAR PRODUCTO
                   
                     <span class="input-group-addon"><i class="fa fa-arrow-up"></i></span> 
 
-                    <input type="number" class="form-control input-lg" id="nuevoPrecioCompra" name="nuevoPrecioCompra" min="0" step="any" placeholder="Precio de compra" required>
+                    <input type="number" class="form-control input-lg" id="nuevoPrecioCompra" name="nuevoPrecioCompra" step="any" min="0" placeholder="Precio de compra" required>
 
                   </div>
 
@@ -244,7 +198,7 @@ MODAL AGREGAR PRODUCTO
                   
                     <span class="input-group-addon"><i class="fa fa-arrow-down"></i></span> 
 
-                    <input type="number" class="form-control input-lg" id="nuevoPrecioVenta" name="nuevoPrecioVenta" min="0" step="any" placeholder="Precio de venta" required>
+                    <input type="number" class="form-control input-lg" id="nuevoPrecioVenta" name="nuevoPrecioVenta" step="any" min="0" placeholder="Precio de venta" required>
 
                   </div>
                 
@@ -426,7 +380,7 @@ MODAL EDITAR PRODUCTO
 
              <div class="form-group row">
 
-                <div class="col-xs-6">
+                <div class="col-xs-12 col-sm-6">
                 
                   <div class="input-group">
                   
@@ -440,7 +394,7 @@ MODAL EDITAR PRODUCTO
 
                 <!-- ENTRADA PARA PRECIO VENTA -->
 
-                <div class="col-xs-6">
+                <div class="col-xs-12 col-sm-6">
                 
                   <div class="input-group">
                   
