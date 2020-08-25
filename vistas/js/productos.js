@@ -13,8 +13,10 @@ CARGAR LA TABLA DINÁMICA DE PRODUCTOS
 
 // })
 
+var perfilOculto = $("#perfilOculto").val();
+
 $('.tablaProductos').DataTable( {
-    "ajax": "ajax/datatable-productos.ajax.php",
+    "ajax": "ajax/datatable-productos.ajax.php?perfilOculto="+perfilOculto,
     "deferRender": true,
 	"retrieve": true,
 	"processing": true,
@@ -283,7 +285,7 @@ $(".tablaProductos tbody").on("click", "button.btnEliminarProducto", function(){
         cancelButtonColor: '#d33',
         cancelButtonText: 'Cancelar',
         confirmButtonText: 'Si, borrar producto!'
-        }).then(function(result){
+        }).then(function(result) {
         if (result.value) {
 
         	window.location = "index.php?ruta=productos&idProducto="+idProducto+"&imagen="+imagen+"&codigo="+codigo;

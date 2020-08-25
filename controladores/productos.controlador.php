@@ -6,11 +6,11 @@ class ControladorProductos{
 	MOSTRAR PRODUCTOS
 	=============================================*/
 
-	static public function ctrMostrarProductos($item, $valor){
+	static public function ctrMostrarProductos($item, $valor, $orden){
 
 		$tabla = "productos";
 
-		$respuesta = ModeloProductos::mdlMostrarProductos($tabla, $item, $valor);
+		$respuesta = ModeloProductos::mdlMostrarProductos($tabla, $item, $valor, $orden);
 
 		return $respuesta;
 
@@ -117,7 +117,7 @@ class ControladorProductos{
 							  title: "El producto ha sido guardado correctamente",
 							  showConfirmButton: true,
 							  confirmButtonText: "Cerrar"
-							  }).then((result) => {
+							  }).then(function(result){
 										if (result.value) {
 
 										window.location = "productos";
@@ -139,7 +139,7 @@ class ControladorProductos{
 						  title: "¡El producto no puede ir con los campos vacíos o llevar caracteres especiales!",
 						  showConfirmButton: true,
 						  confirmButtonText: "Cerrar"
-						  }).then((result) => {
+						  }).then(function(result){
 							if (result.value) {
 
 							window.location = "productos";
@@ -266,7 +266,7 @@ class ControladorProductos{
 							  title: "El producto ha sido editado correctamente",
 							  showConfirmButton: true,
 							  confirmButtonText: "Cerrar"
-							  }).then((result) => {
+							  }).then(function(result){
 										if (result.value) {
 
 										window.location = "productos";
@@ -288,7 +288,7 @@ class ControladorProductos{
 						  title: "¡El producto no puede ir con los campos vacíos o llevar caracteres especiales!",
 						  showConfirmButton: true,
 						  confirmButtonText: "Cerrar"
-						  }).then((result) => {
+						  }).then(function(result){
 							if (result.value) {
 
 							window.location = "productos";
@@ -330,7 +330,7 @@ class ControladorProductos{
 					  title: "El producto ha sido borrado correctamente",
 					  showConfirmButton: true,
 					  confirmButtonText: "Cerrar"
-					  }).then((result) => {
+					  }).then(function(result){
 								if (result.value) {
 
 								window.location = "productos";
@@ -345,5 +345,20 @@ class ControladorProductos{
 
 
 	}
+
+	/*=============================================
+	MOSTRAR SUMA VENTAS
+	=============================================*/
+
+	static public function ctrMostrarSumaVentas(){
+
+		$tabla = "productos";
+
+		$respuesta = ModeloProductos::mdlMostrarSumaVentas($tabla);
+
+		return $respuesta;
+
+	}
+
 
 }

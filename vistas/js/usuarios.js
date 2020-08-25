@@ -1,3 +1,5 @@
+
+
 /*=============================================
 SUBIENDO LA FOTO DEL USUARIO
 =============================================*/
@@ -78,7 +80,11 @@ $(".tablas").on("click", ".btnEditarUsuario", function(){
 
 			if(respuesta["foto"] != ""){
 
-				$(".previsualizar").attr("src", respuesta["foto"]);
+				$(".previsualizarEditar").attr("src", respuesta["foto"]);
+
+			}else{
+
+				$(".previsualizarEditar").attr("src", "vistas/img/usuarios/default/anonymous.png");
 
 			}
 

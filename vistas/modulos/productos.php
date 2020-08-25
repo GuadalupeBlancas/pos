@@ -1,3 +1,18 @@
+<?php
+
+if($_SESSION["perfil"] == "Vendedor"){
+
+  echo '<script>
+
+    window.location = "inicio";
+
+  </script>';
+
+  return;
+
+}
+
+?>
 <div class="content-wrapper">
 
   <section class="content-header">
@@ -53,11 +68,11 @@
            
          </tr> 
 
-        </thead>
-
-       
+        </thead>      
 
        </table>
+
+       <input type="hidden" value="<?php echo $_SESSION['perfil']; ?>" id="perfilOculto">
 
       </div>
 
@@ -178,7 +193,7 @@ MODAL AGREGAR PRODUCTO
 
              <div class="form-group row">
 
-                <div class="col-xs-12 col-sm-6">
+                <div class="col-xs-6">
                 
                   <div class="input-group">
                   
@@ -192,7 +207,7 @@ MODAL AGREGAR PRODUCTO
 
                 <!-- ENTRADA PARA PRECIO VENTA -->
 
-                <div class="col-xs-12 col-sm-6">
+                <div class="col-xs-6">
                 
                   <div class="input-group">
                   
@@ -380,7 +395,7 @@ MODAL EDITAR PRODUCTO
 
              <div class="form-group row">
 
-                <div class="col-xs-12 col-sm-6">
+                <div class="col-xs-6">
                 
                   <div class="input-group">
                   
@@ -394,7 +409,7 @@ MODAL EDITAR PRODUCTO
 
                 <!-- ENTRADA PARA PRECIO VENTA -->
 
-                <div class="col-xs-12 col-sm-6">
+                <div class="col-xs-6">
                 
                   <div class="input-group">
                   

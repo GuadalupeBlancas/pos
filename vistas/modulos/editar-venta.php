@@ -4,13 +4,13 @@
     
     <h1>
       
-      Crear venta
+      Editar venta
     
     </h1>
 
     <ol class="breadcrumb">
       
-      <li><a href="inicio"><i class="fa fa-dashboard"></i>Inicio</a></li>
+      <li><a href="#"><i class="fa fa-dashboard"></i> Inicio</a></li>
       
       <li class="active">Crear venta</li>
     
@@ -22,7 +22,9 @@
 
     <div class="row">
 
-      <!-- Formulario -->
+      <!--=====================================
+      EL FORMULARIO
+      ======================================-->
       
       <div class="col-lg-5 col-xs-12">
         
@@ -55,9 +57,12 @@
 
                     $porcentajeImpuesto = $venta["impuesto"] * 100 / $venta["neto"];
 
+
                 ?>
 
-                <!-- Entrada del vendedor -->
+                <!--=====================================
+                ENTRADA DEL VENDEDOR
+                ======================================-->
             
                 <div class="form-group">
                 
@@ -73,7 +78,9 @@
 
                 </div> 
 
-                <!-- Entrada del codigo --> 
+                <!--=====================================
+                ENTRADA DEL CÓDIGO
+                ======================================--> 
 
                 <div class="form-group">
                   
@@ -87,7 +94,9 @@
                 
                 </div>
 
-                <!-- Entrada del cliente --> 
+                <!--=====================================
+                ENTRADA DEL CLIENTE
+                ======================================--> 
 
                 <div class="form-group">
                   
@@ -122,7 +131,9 @@
                 
                 </div>
 
-                <!-- Entrada agregar producto --> 
+                <!--=====================================
+                ENTRADA PARA AGREGAR PRODUCTO
+                ======================================--> 
 
                 <div class="form-group row nuevoProducto">
 
@@ -134,8 +145,9 @@
 
                   $item = "id";
                   $valor = $value["id"];
+                  $orden = "id";
 
-                  $respuesta = ControladorProductos::ctrMostrarProductos($item, $valor);
+                  $respuesta = ControladorProductos::ctrMostrarProductos($item, $valor, $orden);
 
                   $stockAntiguo = $respuesta["stock"] + $value["cantidad"];
                   
@@ -174,13 +186,16 @@
                       </div>';
                 }
 
+
                 ?>
 
                 </div>
 
                 <input type="hidden" id="listaProductos" name="listaProductos">
 
-                <!-- Boton agregar producto -->
+                <!--=====================================
+                BOTÓN PARA AGREGAR PRODUCTO
+                ======================================-->
 
                 <button type="button" class="btn btn-default hidden-lg btnAgregarProducto">Agregar producto</button>
 
@@ -188,7 +203,9 @@
 
                 <div class="row">
 
-                  <!-- Entrada impuesto y total -->
+                  <!--=====================================
+                  ENTRADA IMPUESTOS Y TOTAL
+                  ======================================-->
                   
                   <div class="col-xs-8 pull-right">
                     
@@ -213,7 +230,7 @@
                            
                               <input type="number" class="form-control input-lg" min="0" id="nuevoImpuestoVenta" name="nuevoImpuestoVenta" value="<?php echo $porcentajeImpuesto; ?>" required>
 
-                               <input type="hidden" name="nuevoPrecioImpuesto" id="nuevoPrecioImpuesto" value="<?php echo $venta["impuesto"]; ?>">
+                               <input type="hidden" name="nuevoPrecioImpuesto" id="nuevoPrecioImpuesto" value="<?php echo $venta["impuesto"]; ?>" required>
 
                                <input type="hidden" name="nuevoPrecioNeto" id="nuevoPrecioNeto" value="<?php echo $venta["neto"]; ?>" required>
 
@@ -229,7 +246,7 @@
                            
                               <span class="input-group-addon"><i class="ion ion-social-usd"></i></span>
 
-                              <input type="text" class="form-control input-lg" id="nuevoTotalVenta" name="nuevoTotalVenta" total="<?php echo $venta["neto"]; ?>" value="<?php echo $venta["total"]; ?>" readonly required>
+                              <input type="text" class="form-control input-lg" id="nuevoTotalVenta" name="nuevoTotalVenta" total="<?php echo $venta["neto"]; ?>"  value="<?php echo $venta["total"]; ?>" readonly required>
 
                               <input type="hidden" name="totalVenta" value="<?php echo $venta["total"]; ?>" id="totalVenta">
                               
@@ -250,7 +267,9 @@
 
                 <hr>
 
-                <!-- Entrada metodo de pago -->
+                <!--=====================================
+                ENTRADA MÉTODO DE PAGO
+                ======================================-->
 
                 <div class="form-group row">
                   
@@ -300,7 +319,9 @@
             
       </div>
 
-      <!-- Tabla de productos -->
+      <!--=====================================
+      LA TABLA DE PRODUCTOS
+      ======================================-->
 
       <div class="col-lg-7 hidden-md hidden-sm hidden-xs">
         
@@ -340,7 +361,9 @@
 
 </div>
 
-<!--  Modal agregar cliente -->
+<!--=====================================
+MODAL AGREGAR CLIENTE
+======================================-->
 
 <div id="modalAgregarCliente" class="modal fade" role="dialog">
   
@@ -350,7 +373,9 @@
 
       <form role="form" method="post">
 
-        <!-- Cabeza del modal -->
+        <!--=====================================
+        CABEZA DEL MODAL
+        ======================================-->
 
         <div class="modal-header" style="background:#3c8dbc; color:white">
 
@@ -360,13 +385,15 @@
 
         </div>
 
-        <!-- Cuerpo del modal -->
+        <!--=====================================
+        CUERPO DEL MODAL
+        ======================================-->
 
         <div class="modal-body">
 
           <div class="box-body">
 
-            <!-- Entrada nombre -->
+            <!-- ENTRADA PARA EL NOMBRE -->
             
             <div class="form-group">
               
@@ -380,7 +407,7 @@
 
             </div>
 
-            <!-- Entrada documento ID -->
+            <!-- ENTRADA PARA EL DOCUMENTO ID -->
             
             <div class="form-group">
               
@@ -394,7 +421,7 @@
 
             </div>
 
-            <!-- Entrada email -->
+            <!-- ENTRADA PARA EL EMAIL -->
             
             <div class="form-group">
               
@@ -408,7 +435,7 @@
 
             </div>
 
-            <!-- Entrada telefono -->
+            <!-- ENTRADA PARA EL TELÉFONO -->
             
             <div class="form-group">
               
@@ -422,7 +449,7 @@
 
             </div>
 
-            <!-- Entrada dirección -->
+            <!-- ENTRADA PARA LA DIRECCIÓN -->
             
             <div class="form-group">
               
@@ -436,7 +463,7 @@
 
             </div>
 
-             <!-- Entrada fecha de nacimiento -->
+             <!-- ENTRADA PARA LA FECHA DE NACIMIENTO -->
             
             <div class="form-group">
               
@@ -454,7 +481,9 @@
 
         </div>
 
-        <!-- Footer modal -->
+        <!--=====================================
+        PIE DEL MODAL
+        ======================================-->
 
         <div class="modal-footer">
 
