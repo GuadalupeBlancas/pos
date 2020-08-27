@@ -5,9 +5,7 @@ require_once "../modelos/clientes.modelo.php";
 
 class AjaxClientes{
 
-	/*=============================================
-	EDITAR CLIENTE
-	=============================================*/	
+	/* Editar cliente */	
 
 	public $idCliente;
 
@@ -20,7 +18,21 @@ class AjaxClientes{
 
 		echo json_encode($respuesta);
 
+	}
 
+	/* Validar no repetir cliente */
+
+	public $validarCliente;
+
+	public function ajaxValidarCliente()
+	{
+
+		$item = "nombre";
+		$valor = $this->validarCliente;
+
+		$respuesta = ControladorClientes::ctrMostrarClientes($item, $valor);
+
+		echo json_encode($respuesta);
 	}
 
 }
@@ -35,4 +47,13 @@ if(isset($_POST["idCliente"])){
 	$cliente -> idCliente = $_POST["idCliente"];
 	$cliente -> ajaxEditarCliente();
 
+}
+
+/* Validar no repetir categoria */
+
+if (isset($_POST["validarCliente"])) {
+
+	$valUsuario = new AjaxClientes();
+	$valUsuario->validarCliente = $_POST["validarCliente"];
+	$valUsuario->ajaxValidarCliente();
 }

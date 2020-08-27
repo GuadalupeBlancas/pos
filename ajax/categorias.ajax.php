@@ -52,7 +52,7 @@ if(isset($_POST["idCategoria"])){
 
 if (isset($_POST["validarCategoria"])) {
 
-	$valUsuario = new AjaxCategorias();
-	$valUsuario->validarCategoria = $_POST["validarCategoria"];
-	$valUsuario->ajaxvalidarCategoria();
+	$valCategoria = new AjaxCategorias();
+	$valCategoria->validarCategoria = $_POST["validarCategoria"];
+	$valCategoria->ajaxvalidarCategoria();
 }

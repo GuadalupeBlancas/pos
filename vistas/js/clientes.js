@@ -57,3 +57,37 @@ $(".tablas").on("click", ".btnEliminarCliente", function(){
   })
 
 })
+
+/* Revisar si ya existe el cliente */
+
+$("#nuevoCliente").change(function () {
+
+  $(".alert").remove();
+
+  var cliente = $(this).val();
+
+  var datos = new FormData();
+  datos.append("validarCliente", cliente);
+
+  $.ajax({
+    url: "ajax/clientes.ajax.php",
+    method: "POST",
+    data: datos,
+    cache: false,
+    contentType: false,
+    processData: false,
+    dataType: "json",
+    success: function (respuesta) {
+
+      if (respuesta) {
+
+        $("#nuevoCliente").parent().after('<div class="alert alert-warning">Nombre de cliente ya existente</div>');
+
+        $("#nuevoCliente").val("");
+
+      }
+
+    }
+
+  })
+})
