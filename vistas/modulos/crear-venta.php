@@ -108,7 +108,6 @@ if($_SESSION["perfil"] == "Especial"){
 
                       echo '<input type="text" class="form-control" id="nuevaVenta" name="nuevaVenta" value="'.$codigo.'" readonly>';
                   
-
                     }
 
                     ?>
@@ -161,8 +160,6 @@ if($_SESSION["perfil"] == "Especial"){
 
                 <div class="form-group row nuevoProducto">
 
-                
-
                 </div>
 
                 <input type="hidden" id="listaProductos" name="listaProductos">
@@ -202,7 +199,7 @@ if($_SESSION["perfil"] == "Especial"){
                             
                             <div class="input-group">
                            
-                              <input type="number" class="form-control input-lg" min="0" id="nuevoImpuestoVenta" name="nuevoImpuestoVenta" placeholder="0" required>
+                              <input type="number" class="form-control input-lg" min="0" id="nuevoImpuestoVenta" name="nuevoImpuestoVenta" placeholder="0">
 
                                <input type="hidden" name="nuevoPrecioImpuesto" id="nuevoPrecioImpuesto" required>
 

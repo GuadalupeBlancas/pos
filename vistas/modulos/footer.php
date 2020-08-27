@@ -1,6 +1,12 @@
 <footer class="main-footer">
-	
-	<strong>Copyright &copy; 2017 <a href="https://www.tutorialesatualcance.com" target="_blank">Tutoriales a tu Alcance</a>.</strong>
+
+	<div class="pull-right hidden-xs">
+
+		<b>Punto de Venta</b> | Version 0.1.0
+
+	</div>
+
+	<strong>Copyright &copy; 2020 <a href="https://github.com/JordyBD" target="_blank">Jrd</a>.</strong>
 
 	Todos los derechos reservados.
 
