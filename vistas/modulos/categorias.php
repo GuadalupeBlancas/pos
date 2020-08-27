@@ -1,6 +1,6 @@
 <?php
 
-if($_SESSION["perfil"] == "Vendedor"){
+if ($_SESSION["perfil"] == "Vendedor") {
 
   echo '<script>
 
@@ -9,7 +9,6 @@ if($_SESSION["perfil"] == "Vendedor"){
   </script>';
 
   return;
-
 }
 
 ?>
@@ -17,19 +16,19 @@ if($_SESSION["perfil"] == "Vendedor"){
 <div class="content-wrapper">
 
   <section class="content-header">
-    
+
     <h1>
-      
+
       Administrar categorías
-    
+
     </h1>
 
     <ol class="breadcrumb">
-      
+
       <li><a href="inicio"><i class="fa fa-dashboard"></i> Inicio</a></li>
-      
+
       <li class="active">Administrar categorías</li>
-    
+
     </ol>
 
   </section>
@@ -39,9 +38,9 @@ if($_SESSION["perfil"] == "Vendedor"){
     <div class="box">
 
       <div class="box-header with-border">
-  
+
         <button class="btn btn-primary" data-toggle="modal" data-target="#modalAgregarCategoria">
-          
+
           Agregar categoría
 
         </button>
@@ -49,62 +48,61 @@ if($_SESSION["perfil"] == "Vendedor"){
       </div>
 
       <div class="box-body">
-        
-       <table class="table table-bordered table-striped dt-responsive tablas" width="100%">
-         
-        <thead>
-         
-         <tr>
-           
-           <th style="width:10px">#</th>
-           <th>Categoria</th>
-           <th>Acciones</th>
 
-         </tr> 
+        <table class="table table-bordered table-striped dt-responsive tablas" width="100%">
 
-        </thead>
+          <thead>
 
-        <tbody>
+            <tr>
 
-        <?php
+              <th style="width:10px">#</th>
+              <th>Categoria</th>
+              <th>Acciones</th>
 
-          $item = null;
-          $valor = null;
+            </tr>
 
-          $categorias = ControladorCategorias::ctrMostrarCategorias($item, $valor);
+          </thead>
 
-          foreach ($categorias as $key => $value) {
-           
-            echo ' <tr>
+          <tbody>
 
-                    <td>'.($key+1).'</td>
+            <?php
 
-                    <td class="text-uppercase">'.$value["categoria"].'</td>
+            $item = null;
+            $valor = null;
+
+            $categorias = ControladorCategorias::ctrMostrarCategorias($item, $valor);
+
+            foreach ($categorias as $key => $value) {
+
+              echo ' <tr>
+
+                    <td>' . ($key + 1) . '</td>
+
+                    <td class="text-uppercase">' . $value["categoria"] . '</td>
 
                     <td>
 
                       <div class="btn-group">
                           
-                        <button class="btn btn-warning btnEditarCategoria" idCategoria="'.$value["id"].'" data-toggle="modal" data-target="#modalEditarCategoria"><i class="fa fa-pencil"></i></button>';
+                        <button class="btn btn-warning btnEditarCategoria" idCategoria="' . $value["id"] . '" data-toggle="modal" data-target="#modalEditarCategoria"><i class="fa fa-pencil"></i></button>';
 
-                        if($_SESSION["perfil"] == "Administrador"){
+              if ($_SESSION["perfil"] == "Administrador") {
 
-                          echo '<button class="btn btn-danger btnEliminarCategoria" idCategoria="'.$value["id"].'"><i class="fa fa-times"></i></button>';
+                echo '<button class="btn btn-danger btnEliminarCategoria" idCategoria="' . $value["id"] . '"><i class="fa fa-times"></i></button>';
+              }
 
-                        }
-
-                      echo '</div>  
+              echo '</div>  
 
                     </td>
 
                   </tr>';
-          }
+            }
 
-        ?>
+            ?>
 
-        </tbody>
+          </tbody>
 
-       </table>
+        </table>
 
       </div>
 
@@ -119,7 +117,7 @@ MODAL AGREGAR CATEGORÍA
 ======================================-->
 
 <div id="modalAgregarCategoria" class="modal fade" role="dialog">
-  
+
   <div class="modal-dialog">
 
     <div class="modal-content">
@@ -147,19 +145,19 @@ MODAL AGREGAR CATEGORÍA
           <div class="box-body">
 
             <!-- ENTRADA PARA EL NOMBRE -->
-            
-            <div class="form-group">
-              
-              <div class="input-group">
-              
-                <span class="input-group-addon"><i class="fa fa-th"></i></span> 
 
-                <input type="text" class="form-control input-lg" name="nuevaCategoria" placeholder="Ingresar categoría" required>
+            <div class="form-group">
+
+              <div class="input-group">
+
+                <span class="input-group-addon"><i class="fa fa-th"></i></span>
+
+                <input type="text" class="form-control input-lg" name="nuevaCategoria" id="nuevaCategoria"  placeholder="Ingresar categoría" required>
 
               </div>
 
             </div>
-  
+
           </div>
 
         </div>
@@ -178,8 +176,8 @@ MODAL AGREGAR CATEGORÍA
 
         <?php
 
-          $crearCategoria = new ControladorCategorias();
-          $crearCategoria -> ctrCrearCategoria();
+        $crearCategoria = new ControladorCategorias();
+        $crearCategoria->ctrCrearCategoria();
 
         ?>
 
@@ -196,7 +194,7 @@ MODAL EDITAR CATEGORÍA
 ======================================-->
 
 <div id="modalEditarCategoria" class="modal fade" role="dialog">
-  
+
   <div class="modal-dialog">
 
     <div class="modal-content">
@@ -224,21 +222,21 @@ MODAL EDITAR CATEGORÍA
           <div class="box-body">
 
             <!-- ENTRADA PARA EL NOMBRE -->
-            
+
             <div class="form-group">
-              
+
               <div class="input-group">
-              
-                <span class="input-group-addon"><i class="fa fa-th"></i></span> 
+
+                <span class="input-group-addon"><i class="fa fa-th"></i></span>
 
                 <input type="text" class="form-control input-lg" name="editarCategoria" id="editarCategoria" required>
 
-                 <input type="hidden"  name="idCategoria" id="idCategoria" required>
+                <input type="hidden" name="idCategoria" id="idCategoria" required>
 
               </div>
 
             </div>
-  
+
           </div>
 
         </div>
@@ -255,12 +253,12 @@ MODAL EDITAR CATEGORÍA
 
         </div>
 
-      <?php
+        <?php
 
-          $editarCategoria = new ControladorCategorias();
-          $editarCategoria -> ctrEditarCategoria();
+        $editarCategoria = new ControladorCategorias();
+        $editarCategoria->ctrEditarCategoria();
 
-        ?> 
+        ?>
 
       </form>
 
@@ -272,9 +270,7 @@ MODAL EDITAR CATEGORÍA
 
 <?php
 
-  $borrarCategoria = new ControladorCategorias();
-  $borrarCategoria -> ctrBorrarCategoria();
+$borrarCategoria = new ControladorCategorias();
+$borrarCategoria->ctrBorrarCategoria();
 
 ?>
-
-
