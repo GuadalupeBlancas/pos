@@ -478,9 +478,7 @@ class ControladorVentas{
 		
 	}
 
-	/*=============================================
-	DESCARGAR EXCEL
-	=============================================*/
+	/* Descargar reporte Excel */
 
 	public function ctrDescargarReporte(){
 
@@ -502,9 +500,7 @@ class ControladorVentas{
 			}
 
 
-			/*=============================================
-			CREAMOS EL ARCHIVO DE EXCEL
-			=============================================*/
+			/* Crear archivo de Excel */
 
 			$Name = $_GET["reporte"].'.xls';
 
@@ -566,10 +562,7 @@ class ControladorVentas{
 					<td style='border:1px solid #eee;'>".$item["metodo_pago"]."</td>
 					<td style='border:1px solid #eee;'>".substr($item["fecha"],0,10)."</td>		
 		 			</tr>");
-
-
 			}
-
 
 			echo "</table>";
 
@@ -582,7 +575,7 @@ class ControladorVentas{
 	SUMA TOTAL VENTAS
 	=============================================*/
 
-	public function ctrSumaTotalVentas(){
+	static public function ctrSumaTotalVentas(){
 
 		$tabla = "ventas";
 

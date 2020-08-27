@@ -72,6 +72,28 @@ class ControladorUsuarios{
 				}else{
 
 					echo '<br><div class="alert alert-danger">Error al ingresar, vuelve a intentarlo</div>';
+				// 	echo '<script>
+
+				// 	swal({
+
+				// 		type: "error",
+				// 		title: "¡Datos de inicio incorrectos!",
+				// 		showConfirmButton: true,
+				// 		confirmButtonText: "Cerrar"
+
+				// 	}).then(function(result){
+
+				// 		if(result.value){
+						
+				// 			window.location = "";
+
+				// 		}
+
+				// 	});
+				
+
+				// </script>';
+
 
 				}
 

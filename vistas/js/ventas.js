@@ -774,9 +774,7 @@ $(".tablas").on("click", ".btnImprimirFactura", function(){
 
 })
 
-/*=============================================
-RANGO DE FECHAS
-=============================================*/
+/* Rango de fechas */
 
 $('#daterange-btn').daterangepicker(
   {
@@ -791,7 +789,9 @@ $('#daterange-btn').daterangepicker(
     startDate: moment(),
     endDate  : moment()
   },
+
   function (start, end) {
+
     $('#daterange-btn span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
 
     var fechaInicial = start.format('YYYY-MM-DD');
@@ -808,15 +808,14 @@ $('#daterange-btn').daterangepicker(
 
 )
 
-/*=============================================
-CANCELAR RANGO DE FECHAS
-=============================================*/
+/* Cancelar rango de fechas */
 
 $(".daterangepicker.opensleft .range_inputs .cancelBtn").on("click", function(){
 
 	localStorage.removeItem("capturarRango");
 	localStorage.clear();
 	window.location = "ventas";
+	
 })
 
 /*=============================================

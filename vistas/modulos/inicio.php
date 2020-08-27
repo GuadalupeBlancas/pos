@@ -86,15 +86,17 @@
 
           if($_SESSION["perfil"] =="Especial" || $_SESSION["perfil"] =="Vendedor"){
 
-             echo '<div class="box box-success">
+             echo 
+             
+            '<div class="box box-success">
 
-             <div class="box-header">
+              <div class="box-header">
 
-             <h1>Bienvenid@ ' .$_SESSION["nombre"].'</h1>
+                <h1>Bienvenido al sistema ' .$_SESSION["nombre"].'</h1>
 
-             </div>
+              </div>
 
-             </div>';
+            </div>';
 
           }
 

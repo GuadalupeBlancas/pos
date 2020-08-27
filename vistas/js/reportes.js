@@ -19,7 +19,7 @@ RANGO DE FECHAS
 $('#daterange-btn2').daterangepicker(
   {
     ranges   : {
-      'Hoy'       : [moment(), moment()],
+      'Hoy'    : [moment(), moment()],
       'Ayer'   : [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
       'Últimos 7 días' : [moment().subtract(6, 'days'), moment()],
       'Últimos 30 días': [moment().subtract(29, 'days'), moment()],

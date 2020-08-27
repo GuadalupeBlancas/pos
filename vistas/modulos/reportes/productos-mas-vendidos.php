@@ -10,7 +10,6 @@ $colores = array("red","green","yellow","aqua","purple","blue","cyan","magenta",
 
 $totalVentas = ControladorProductos::ctrMostrarSumaVentas();
 
-
 ?>
 
 <!--=====================================
@@ -23,7 +22,7 @@ PRODUCTOS MÁS VENDIDOS
   
       <h3 class="box-title">Productos más vendidos</h3>
 
-    </div>
+  </div>
 
 	<div class="box-body">
     
@@ -51,9 +50,7 @@ PRODUCTOS MÁS VENDIDOS
 
 					}
 
-
 		  	 	?>
-
 
 		  	 	</ul>
 
@@ -71,18 +68,17 @@ PRODUCTOS MÁS VENDIDOS
 
           	for($i = 0; $i <5; $i++){
 			
-          		echo '<li>
+              echo 
+              
+              '<li>
 						 
-						 <a>
+						    <a>
 
-						 <img src="'.$productos[$i]["imagen"].'" class="img-thumbnail" width="60px" style="margin-right:10px"> 
-						 '.$productos[$i]["descripcion"].'
+						      <img src="'.$productos[$i]["imagen"].'" class="img-thumbnail" width="60px" style="margin-right:10px">'.$productos[$i]["descripcion"].'
 
-						 <span class="pull-right text-'.$colores[$i].'">   
-						 '.ceil($productos[$i]["ventas"]*100/$totalVentas["total"]).'%
-						 </span>
+						      <span class="pull-right text-'.$colores[$i].'"> '.ceil($productos[$i]["ventas"]*100/$totalVentas["total"]).'%</span>
 							
-						 </a>
+						    </a>
 
       				</li>';
 
@@ -90,10 +86,9 @@ PRODUCTOS MÁS VENDIDOS
 
 			?>
 
-
 		</ul>
 
-    </div>
+  </div>
 
 </div>
 

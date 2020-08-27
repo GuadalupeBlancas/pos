@@ -13,7 +13,7 @@ $productos = ControladorProductos::ctrMostrarProductos($item, $valor, $orden);
 
   <div class="box-header with-border">
 
-    <h3 class="box-title">Recently Added Products</h3>
+    <h3 class="box-title">Productos recientes </h3>
 
     <div class="box-tools pull-right">
 
@@ -23,11 +23,11 @@ $productos = ControladorProductos::ctrMostrarProductos($item, $valor, $orden);
 
       </button>
 
-      <button type="button" class="btn btn-box-tool" data-widget="remove">
+      <!-- <button type="button" class="btn btn-box-tool" data-widget="remove">
 
         <i class="fa fa-times"></i>
 
-      </button>
+      </button> -->
 
     </div>
 
@@ -51,7 +51,7 @@ $productos = ControladorProductos::ctrMostrarProductos($item, $valor, $orden);
 
         <div class="product-info">
 
-          <a href="" class="product-title">
+          <a href="productos" class="product-title">
 
             '.$productos[$i]["descripcion"].'
 
