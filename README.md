@@ -16,7 +16,7 @@ Mira **Instalación** para conocer como desplegar el proyecto.
 1. Obtener el repositorio actual, mencionado en el apartado **Comenzando**.
 2. Descomprimir el archivo dentro del directorio deseado.
 3. Ingresar a _pos/modelos/conexion.php_ y modificar las variables de conexión con el servidor de base de datos.
-4. Crear la base de datos _pos_ importando el archivo pos.sql ubicado en el directorio.
+4. Crear la base de datos _pos_ importando el archivo pos.sql ubicado en la ruta _pos/bd_.
 5. Ingresar la URL dentro del navegador, por ejemplo _localhost/pos_.
 6. Los datos de inicio de sesión se encuentran dentro del archivo _info.txt_.
 
