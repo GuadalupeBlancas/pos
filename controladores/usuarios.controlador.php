@@ -64,35 +64,55 @@ class ControladorUsuarios{
 						
 					}else{
 
-						echo '<br>
-							<div class="alert alert-danger">El usuario aún no está activado</div>';
+						echo '<script>
+
+					swal({
+
+						type: "error",
+						title: "¡El usuario está desactivado!",
+						text: "Favor de consultar con el administrador!",
+						showConfirmButton: true,
+						confirmButtonText: "Ok"
+
+					}).then(function(result){
+
+						if(result.value){
+						
+							window.location = "";
+
+						}
+
+					});
+				
+
+				</script>';
 
 					}		
 
 				}else{
 
-					echo '<br><div class="alert alert-danger">Error al ingresar, vuelve a intentarlo</div>';
-				// 	echo '<script>
+					echo '<script>
 
-				// 	swal({
+					swal({
 
-				// 		type: "error",
-				// 		title: "¡Datos de inicio incorrectos!",
-				// 		showConfirmButton: true,
-				// 		confirmButtonText: "Cerrar"
+						type: "error",
+						title: "¡Datos de inicio incorrectos!",
+						text: "Favor de verificar!",
+						showConfirmButton: true,
+						confirmButtonText: "Ok"
 
-				// 	}).then(function(result){
+					}).then(function(result){
 
-				// 		if(result.value){
+						if(result.value){
 						
-				// 			window.location = "";
+							window.location = "";
 
-				// 		}
+						}
 
-				// 	});
+					});
 				
 
-				// </script>';
+				</script>';
 
 
 				}
