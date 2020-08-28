@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 28-08-2020 a las 01:59:27
+-- Tiempo de generación: 28-08-2020 a las 19:26:13
 -- Versión del servidor: 10.4.14-MariaDB
 -- Versión de PHP: 7.2.33
 
@@ -192,7 +192,7 @@ CREATE TABLE `usuarios` (
 
 INSERT INTO `usuarios` (`id`, `nombre`, `usuario`, `password`, `perfil`, `foto`, `estado`, `ultimo_login`, `fecha`) VALUES
 (1, 'Administrador', 'admin', '$2a$07$asxx54ahjppf45sd87a5auXBm1Vr2M1NV5t/zNQtGHGpS5fFirrbG', 'Administrador', 'vistas/img/usuarios/admin/191.jpg', 1, '2020-08-25 13:32:54', '2020-08-25 18:32:54'),
-(60, 'Jordi Ayala', 'jordi', '$2a$07$asxx54ahjppf45sd87a5auwylxJbTsp59W1dx3hL2E82/6xIJf9u2', 'Administrador', 'vistas/img/usuarios/jordi/628.jpg', 1, '2020-08-27 17:03:31', '2020-08-27 22:03:31'),
+(60, 'Jordi Ayala', 'jordi', '$2a$07$asxx54ahjppf45sd87a5auwylxJbTsp59W1dx3hL2E82/6xIJf9u2', 'Administrador', 'vistas/img/usuarios/jordi/628.jpg', 1, '2020-08-28 12:13:12', '2020-08-28 17:13:12'),
 (61, 'Operador', 'operador', '$2a$07$asxx54ahjppf45sd87a5au/5NrFyOVsHpbETWTMKPHrsTVXzsmeOO', 'Especial', 'vistas/img/usuarios/operador/384.jpg', 1, '2020-08-27 12:38:29', '2020-08-27 17:38:29');
 
 -- --------------------------------------------------------
