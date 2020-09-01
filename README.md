@@ -23,9 +23,9 @@ Mira **Instalación** para conocer como desplegar el proyecto.
 ## Desarrollado con 🛠️ 
 - PHP 7.2.4
 - Plantilla AdminLTE 2.4.2
-- Mysql
+- MySQL
 - HTML 5
-- CSS 3
+- CSS3
 - JavaScript
 - Ajax
 
