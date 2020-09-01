@@ -63,7 +63,7 @@ $bloque1 = <<<EOF
 		
 		<tr>
 			
-			<td style="width:150px"><img src="images/logo-negro-bloque.png"></td>
+			<td style="width:150px"><img src="images/logo-blanco-bloque.png"></td>
 
 			<td style="background-color:white; width:140px">
 				
@@ -87,7 +87,7 @@ $bloque1 = <<<EOF
 					Teléfono: 722 411 52 49
 					
 					<br>
-					ventas@miscgarcia.com
+					miscgarcia@gmail.com
 
 				</div>
 				
