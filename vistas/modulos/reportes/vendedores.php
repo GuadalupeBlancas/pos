@@ -57,9 +57,9 @@ VENDEDORES
   		
 	  <div class="chart-responsive">
 			
-			<div class="chart" id="bar-chart1" style="height: 300px;"></div>
-
-		/div>
+      <div class="chart" id="bar-chart1" style="height: 300px;">
+    
+    </div>
 
   </div>
 

@@ -8,7 +8,7 @@
  		<!-- logo mini -->
  		<span class="logo-mini">
 
- 			<img src="vistas/img/plantilla/icono-blanco.png" class="img-responsive" style="padding:10px">
+ 			<img src="vistas/img/plantilla/icono-yellow.png" class="img-responsive" style="padding:10px">
 
  		</span>
 
@@ -76,9 +76,9 @@
  							</div>
 
  							<div class="pull-left">
-								 
-								 <a href="usuarios" class="btn btn-default btn-flat">Perfil</a>
-								 
+
+ 								<a href="usuarios" class="btn btn-default btn-flat">Perfil</a>
+
  							</div>
 
  						</li>
