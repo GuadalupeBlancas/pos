@@ -23,6 +23,7 @@ Mira **Instalación** para conocer como desplegar el proyecto.
 ## Desarrollado con 🛠️ 
 - PHP 7.2.4
 - Plantilla AdminLTE 2.4.2
+- Bootstrap
 - MySQL
 - HTML 5
 - CSS3
